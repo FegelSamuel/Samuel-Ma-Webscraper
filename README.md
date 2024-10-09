@@ -4,3 +4,4 @@ Hello! This is my repo for practicing with Web Scraping!
 * `Python3`
 * `Scrapy`
 * `xpath`
+* `ReGeX`

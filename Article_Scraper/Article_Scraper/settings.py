@@ -9,6 +9,8 @@
 
 BOT_NAME = "Article_Scraper"
 
+CLOSESPIDER_PAGECOUNT=10
+
 SPIDER_MODULES = ["Article_Scraper.spiders"]
 NEWSPIDER_MODULE = "Article_Scraper.spiders"
 
@@ -62,9 +64,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "Article_Scraper.pipelines.ArticleScraperPipeline": 300,
-#}
+ITEM_PIPELINES = {
+    "Article_Scraper.pipelines.CheckItemPipeline": 100, # 100 is priority number, so is 200
+    "Article_Scraper.pipelines.CleanDatePipeline": 200, # reminder that lower number = higher priority (done first)
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

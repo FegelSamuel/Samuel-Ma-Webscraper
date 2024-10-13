@@ -1,4 +1,4 @@
 *.pyc
 articles.xml
 __pycache__/
-articles.json
+articles.*

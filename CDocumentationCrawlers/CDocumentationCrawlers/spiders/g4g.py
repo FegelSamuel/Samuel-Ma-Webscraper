@@ -7,10 +7,10 @@ from CDocumentationCrawlers.items import Article
 class G4gSpider(CrawlSpider):
     name = 'g4g'
     allowed_domains = ['geeksforgeeks.org']
-    start_urls = ['https://www.geeksforgeeks.org/c-file-io/']
+    start_urls = ['https://www.geeksforgeeks.org/object-oriented-programming-in-cpp/']
 
     rules = [
-        Rule(LinkExtractor(allow=r'cpp.*'), callback='parse', follow=True) # LOOK HERE
+        Rule(LinkExtractor(allow=r'(?!.*(tag|courses|category))cpp.*'), callback='parse', follow=True) # LOOK HERE
     ]
 
     def parse(self, response):

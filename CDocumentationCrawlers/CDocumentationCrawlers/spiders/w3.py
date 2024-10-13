@@ -11,7 +11,7 @@ class W3Spider(CrawlSpider):
     start_urls = ['https://w3schools.com/c/c_variables_format.php']
 
     rules = [
-        Rule(LinkExtractor(allow=r'c/((?!tryc).)*$'), callback='parse', follow=True)
+        Rule(LinkExtractor(allow=r'c/((?!.*(tryc|exercise|exam)).)*$'), callback='parse', follow=True)
     ]
 
     def parse(self, response):

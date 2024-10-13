@@ -10,12 +10,10 @@ class RefSpider(CrawlSpider):
 
     rules = [
         Rule(LinkExtractor(allow=r'w/c/language/(.)*$'), callback='parse', follow=True)
-        # If you're wondering about the ReGeX, it means allow anything past wiki/ but without any ?, !, or :
-        # Anything = .
     ]
 
     def parse(self, response):
         article = Article() # make a new Article object
-        article['title'] = response.xpath('//span[@class="color_h1"]/text()').get()
+        article['title'] = response.xpath('//h1[@class="firstHeading"]/text()').get()
         article['url'] = response.url
         return article

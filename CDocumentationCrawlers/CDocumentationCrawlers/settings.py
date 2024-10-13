@@ -94,5 +94,5 @@ FEED_EXPORT_ENCODING = "utf-8"
 
 
 CLOSESPIDER_PAGECOUNT=10
-FEED_URI = 'articles.xml'
-FEED_FORMAT = 'xml'
+FEED_URI = 'articles.json'
+FEED_FORMAT = 'json'

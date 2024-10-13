@@ -10,13 +10,11 @@ class G4gSpider(CrawlSpider):
     start_urls = ['https://www.geeksforgeeks.org/c-file-io/']
 
     rules = [
-        Rule(LinkExtractor(allow=r'c.*'), callback='parse', follow=True)
-        # If you're wondering about the ReGeX, it means allow anything past wiki/ but without any ?, !, or :
-        # Anything = .
+        Rule(LinkExtractor(allow=r'cpp.*'), callback='parse', follow=True) # LOOK HERE
     ]
 
     def parse(self, response):
         article = Article() # make a new Article object
-        article['title'] = response.xpath('//span[@class="article-title"]/text()').get()
+        article['title'] = response.xpath('//div[@class="article-title"]/h1/text()').get()
         article['url'] = response.url
         yield article

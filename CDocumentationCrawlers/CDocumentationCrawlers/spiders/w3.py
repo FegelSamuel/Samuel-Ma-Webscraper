@@ -11,9 +11,7 @@ class W3Spider(CrawlSpider):
     start_urls = ['https://w3schools.com/c/c_variables_format.php']
 
     rules = [
-        Rule(LinkExtractor(allow=r'c/(.)*$'), callback='parse', follow=True)
-        # If you're wondering about the ReGeX, it means allow anything past wiki/ but without any ?, !, or :
-        # Anything = .
+        Rule(LinkExtractor(allow=r'c/((?!tryc).)*$'), callback='parse', follow=True)
     ]
 
     def parse(self, response):

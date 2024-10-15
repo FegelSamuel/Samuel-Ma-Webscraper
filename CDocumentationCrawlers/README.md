@@ -2,12 +2,15 @@
 ```bash
 cd CDocumentationCrawlers/CDocumentationCrawlers/spiders
 ```
+Geeks For Geeks
 ```bash
 scrapy runspider g4g.py
 ```
+w3schools
 ```bash
 scrapy runspider w3.py
 ```
+cppreference
 ```bash
 scrapy runspider ref.py
 ```
